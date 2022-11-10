@@ -27,7 +27,7 @@
                     </template>
                 </el-table-column>/>
                 <el-table-column prop="type" label="收支类型" width="120" />
-                <el-table-column prop="describe" label="收支描述" width="120" />
+                <el-table-column prop="describe" label="收支描述" :show-overflow-tooltip="true" width="250" />
                 <el-table-column prop="incode" label="收入" width="200">
                     <template #default="scope">
                         <el-tag type="success">
@@ -49,8 +49,8 @@
                         </el-tag>
                     </template>
                 </el-table-column> />
-                <el-table-column prop="remark" label="备注" width="300" />
-                <el-table-column label="操作" v-if="user.identity == 1">
+                <el-table-column prop="remark" label="备注" width="200" />
+                <el-table-column label="操作" v-if="user.identity == 1" >
                     <template #default="scope">
                         <el-button type="primary" size="small" @click="editOpen(scope.row)">修改</el-button>
                         <el-button type="danger" @click="deleteItem(scope.row)" size="small">删除</el-button>
